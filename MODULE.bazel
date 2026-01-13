@@ -1,0 +1,18 @@
+###############################################################################
+# Bazel now uses Bzlmod by default to manage external dependencies.
+# Please consider migrating your external dependencies from WORKSPACE to MODULE.bazel.
+#
+# For more details, please check https://github.com/bazelbuild/bazel/issues/18958
+###############################################################################
+
+# The official name of your module (can be anything)
+module(
+    name = "async_stuff",
+    version = "1.0",
+)
+
+# Load the official rules for C++ (rules_cc)
+bazel_dep(name = "rules_cc", version = "0.1.1") # Use a recent version
+
+# Load the rules for GoogleTest/GoogleMock if you are using them
+bazel_dep(name = "googletest", version = "1.17.0")
